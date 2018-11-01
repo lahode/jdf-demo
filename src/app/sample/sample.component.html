@@ -1,0 +1,10 @@
+<div class="sample-form">
+  <h1>Sample Form</h1>
+  <jdf-dynamic-form
+    formName="sample"
+    #form="jdfDynamicForm"
+    (submit)="submit($event)">
+  </jdf-dynamic-form>
+  <p>Is form valid: {{ form.valid }}</p>
+  <p>Form data: {{ form.value | json }}</p>
+</div>

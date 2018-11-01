@@ -1,0 +1,111 @@
+{
+  "form" : [
+      {
+        "type": "input",
+        "label": "Full name",
+        "name": "name",
+        "placeholder": "Enter your name",
+        "validation": {
+          "required": true,
+          "minLength": 4
+        },
+        "help": "Minimum 4 characters"
+      },
+      {
+        "type": "select",
+        "class": "test",
+        "label": "Favourite Food",
+        "name": "food",
+        "value": "",
+        "options": [
+          { "pizza": "Pizza" },
+          "Hot Dogs",
+          { "hknakworstje" : "HKnakworstje" },
+          { "coffee" : "HCoffee" }
+        ],
+        "placeholder": "Select an option",
+        "validation": {
+          "required": true
+        }
+      },
+      {
+        "type": "checkbox",
+        "label": "Do you like it",
+        "value": true,
+        "name": "checkit"
+      },
+      {
+        "type": "button",
+        "label": "Button here",
+        "name": "button"
+      },
+      {
+        "type": "radios",
+        "label": "Button here",
+        "name": "radios",
+        "value": "pizza",
+        "options": [
+          { "pizza": "Pizza" },
+          "Hot Dogs",
+          { "hknakworstje" : "HKnakworstje" },
+          { "coffee" : "HCoffee" }
+        ]
+      },
+      {
+        "type": "checkboxes",
+        "label": "Button here",
+        "name": "multiplechoices",
+        "options": [
+          { "pizza": "Pizza" },
+          { "hknakworstje" : "HKnakworstje" },
+          { "coffee" : "HCoffee" }
+        ]
+      },
+      {
+        "type": "color",
+        "label": "Select your favourite color",
+        "name": "colorpicker",
+        "value" : "ff0000"
+      },
+      {
+        "type": "date",
+        "label": "Date of your last meal",
+        "placeholder": "Select a date",
+        "name": "datemeal",
+        "format" : "YYYY-MM-DD"
+      },
+      {
+        "type": "submit",
+        "label": "Submit",
+        "name": "submit"
+      },
+      {
+        "type": "reset",
+        "label": "Cancel",
+        "name": "cancel"
+      }
+  ],
+  "display" : {
+    "group1" : {
+      "wrapper": {
+        "type" : "div",
+        "class" : "group-1"
+      },
+      "label": "Group 1",
+      "fields" : ["name", "food", "colorpicker", "checkit"]
+    },
+    "group2" : {
+      "wrapper": {
+        "type" : "fieldset",
+        "class" : "group-2"
+      },
+      "label": "Group 2",
+      "fields" : ["button", "radios", "multiplechoices", "datemeal"]
+    },
+    "group3" : {
+      "class" : "form-inline",
+      "fields" : ["cancel", "submit"]
+    }
+  }
+
+}

@@ -1,0 +1,17 @@
+<div class="dynamic-field form-checkboxes"
+     [formGroup]="group"
+     [ngClass]="config.class">
+  <div [formGroupName]="config.name">
+    <div *ngFor="let option of group.get(config.name).value | keyvalue" class="form-check">
+      <input class="form-check-input"
+             type="checkbox"
+             [formControlName]="option.key"
+             [value]="option.value"
+             [id]="config.name + '-' + option.key">
+      <label class="form-check-label"
+             [for]="config.name + '-' + option.key">
+        {{ option.key }}
+      </label>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+<div
+  class="dynamic-field form-group form-checkbox"
+  [formGroup]="group"
+  [ngClass]="config.class">
+  <label [for]="config.name">
+    <input type="checkbox"
+           [id]="config.name"
+           [formControlName]="config.name"/>
+    {{ config.label }}
+  </label>
+</div>

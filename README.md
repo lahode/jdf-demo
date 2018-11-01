@@ -1,27 +1,59 @@
-# JdfDemo
+# JSON Dynamic form
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.3.
+Have you ever dream building your form just by passing some JSON configuration from your server to Angular.
+If the answer is yes, this project is maybe for you!
 
-## Development server
+Thanks to Ted Motto's post [Configurable Reactive Forms in Angular with dynamic components](https://toddmotto.com/angular-dynamic-components-forms), I adapted his project to be able to pass a JSON file.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## How does it work
 
-## Code scaffolding
+1) app.module
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Import the module and config file
 
-## Build
+```
+import { JsonDynamicFormModule } from 'json-dynamic-form';
+import { JsonDynamicFormConfig } from 'json-dynamic-form';
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Tell your module where to fetch your JSON files
 
-## Running unit tests
+```
+const JsonDynamicFormConfig: JsonDynamicFormConfig = {
+  serverPath: 'http://localhost:4200/assets/'
+};
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Declare your the Dynamic Form Module
 
-## Running end-to-end tests
+```
+imports: [
+  JsonDynamicFormModule.forRoot(JsonDynamicFormConfig)
+]
+````
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+2) Create a JSON file
 
-## Further help
+See examples in the assets folder
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+2) Display your forms
+
+```
+  <jdf-dynamic-form
+    formName="login"
+    #form="jdfDynamicForm"
+    (submit)="submit($event)">
+  </jdf-dynamic-form>
+```
+
+N.B: - formName must be the name of your JSON file
+     - variable "form" retrieves your form object in your component
+
+That's it!
+
+## Notes
+
+The project support basic validation, several types of HTML form elements, wrapping, adding classes, etc.
+
+Of course, feel free to propose any evolution.

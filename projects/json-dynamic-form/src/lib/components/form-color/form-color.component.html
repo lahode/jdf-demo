@@ -1,0 +1,11 @@
+<div class="dynamic-field form-group form-color"
+     [formGroup]="group"
+     [ngClass]="config.class">
+  <label [for]="config.name">{{ config.label }}</label>
+  <input type="color"
+         [id]="config.name"
+         [formControlName]="config.name" />
+  <small *ngIf="config.help"
+         [id]="config.name + 'Help'"
+         class="form-text text-muted">{{ config.help }}</small>
+</div>

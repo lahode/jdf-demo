@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "json-dynamic-form": {
+      "root": "projects/json-dynamic-form",
+      "sourceRoot": "projects/json-dynamic-form/src",
+      "projectType": "library",
+      "prefix": "jdf",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/json-dynamic-form/tsconfig.lib.json",
+            "project": "projects/json-dynamic-form/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/json-dynamic-form/src/test.ts",
+            "tsConfig": "projects/json-dynamic-form/tsconfig.spec.json",
+            "karmaConfig": "projects/json-dynamic-form/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/json-dynamic-form/tsconfig.lib.json",
+              "projects/json-dynamic-form/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "jdf-demo"

@@ -16,6 +16,14 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "json-dynamic-form": [
+        "dist/json-dynamic-form"
+      ],
+      "json-dynamic-form/*": [
+        "dist/json-dynamic-form/*"
+      ]
+    }
   }
 }

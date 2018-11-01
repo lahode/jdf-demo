@@ -1,0 +1,43 @@
+{
+  "form" : [
+      {
+        "type": "email",
+        "label": "Enter your e-mail",
+        "name": "email",
+        "validation": {
+          "required": true
+        },
+        "help": "Enter a valid e-mail"
+      },
+      {
+        "type": "password",
+        "label": "Enter your password",
+        "name": "password",
+        "validation": {
+          "required": true,
+          "minLength": 8
+        },
+        "help": "Minimum 8 characters"
+      },
+      {
+        "type": "submit",
+        "label": "Submit",
+        "name": "submit"
+      },
+      {
+        "type": "reset",
+        "label": "Cancel",
+        "name": "cancel"
+      }
+  ],
+  "display" : {
+    "credentials" : {
+      "fields" : ["email", "password"]
+    },
+    "submission" : {
+      "class" : "form-inline",
+      "fields" : ["cancel", "submit"]
+    }
+  }
+
+}
