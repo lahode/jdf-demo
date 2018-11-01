@@ -1,6 +1,21 @@
 {
   "name": "json-dynamic-form",
   "version": "0.0.1",
+  "author": {
+    "name": "Fredrik Lahode",
+    "email": "astrobob2018@gmail.com"
+  },
+  "bundleDependencies": false,
+  "deprecated": false,
+  "description": "JSON Dynamic form for Angular",
+  "homepage": "https://github.com/lahode/jdf-demo",
+  "keywords": [
+    "angular",
+    "bootstap",
+    "ng",
+    "ng2",
+    "angular2",
+  ],
   "peerDependencies": {
     "@angular/common": "^7.0.0",
     "@angular/core": "^7.0.0",
