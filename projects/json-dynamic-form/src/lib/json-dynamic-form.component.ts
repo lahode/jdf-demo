@@ -1,6 +1,6 @@
 import { Component, EventEmitter, OnChanges, OnInit, Input, Output } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
-import { of } from 'rxjs';
+import { AsyncSubject, of } from 'rxjs';
 
 import { FieldConfig } from './models/field-config.interface';
 import { JsonDynamicFormService } from './services/json-dynamic-form.service';
@@ -37,6 +37,7 @@ export class JsonDynamicFormComponent implements OnChanges, OnInit {
   @Input() formName;
   @Output() submit: EventEmitter<any> = new EventEmitter<any>();
 
+  private _initWaiter$ = new AsyncSubject();
   config: FieldConfig[];
   display: any[];
   form: FormGroup;
@@ -50,12 +51,17 @@ export class JsonDynamicFormComponent implements OnChanges, OnInit {
               private _fb: FormBuilder) {}
 
   ngOnInit() {
-    // this.form = this.createGroup();
     this._df.getForm(this.formName).subscribe(config => {
       this.config = config['form'];
       this.display = config['display'] || null;
       this.form = this.createGroup();
+      this._initWaiter$.next(this.form);
+      this._initWaiter$.complete();
     });
+  }
+
+  getForm() {
+    return this._initWaiter$;
   }
 
   ngOnChanges() {

@@ -20,11 +20,11 @@ export class SampleComponent implements AfterViewInit {
       }
     });
 
+    this.form.getForm().subscribe(form => form['controls']['name'].setValue('My food'));
     this.form.setDisabled('submit', true);
   }
 
   submit(value: {[name: string]: any}) {
-    console.log(value);
   }
 
 }
