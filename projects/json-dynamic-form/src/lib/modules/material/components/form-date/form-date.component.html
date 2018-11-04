@@ -1,0 +1,15 @@
+<div class="dynamic-field form-group form-input"
+     [formGroup]="group"
+     [ngClass]="config.class">
+  <label [for]="config.name">{{ config.label }}</label>
+  <input type="text"
+         [id]="config.name"
+         class="form-control"
+         [attr.placeholder]="config.placeholder"
+         [formControlName]="config.name"
+         bsDatepicker
+         [bsConfig]="{ dateInputFormat: config.format || 'DD-MM-YYYY' }">
+  <small *ngIf="config.help"
+         [id]="config.name + 'Help'"
+         class="form-text text-muted">{{ config.help }}</small>
+</div>

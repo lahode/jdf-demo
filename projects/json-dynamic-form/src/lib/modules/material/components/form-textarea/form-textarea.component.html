@@ -1,0 +1,12 @@
+<div class="dynamic-field form-group form-textarea"
+     [formGroup]="group"
+     [ngClass]="config.class">
+  <label [for]="config.name">{{ config.label }}</label>
+  <textarea class="form-control"
+            [attr.placeholder]="config.placeholder"
+            [id]="config.name"
+            [formControlName]="config.name"></textarea>
+  <small *ngIf="config.help"
+         [id]="config.name + 'Help'"
+         class="form-text text-muted">{{ config.help }}</small>
+</div>

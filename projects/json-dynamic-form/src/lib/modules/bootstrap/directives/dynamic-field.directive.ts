@@ -13,9 +13,10 @@ import { FormRadiosComponent } from '../components/form-radios/form-radios.compo
 import { FormResetComponent } from '../components/form-reset/form-reset.component';
 import { FormSelectComponent } from '../components/form-select/form-select.component';
 import { FormSubmitComponent } from '../components/form-submit/form-submit.component';
+import { FormTextareaComponent } from '../components/form-textarea/form-textarea.component';
 
-import { Field } from '../models/field.interface';
-import { FieldConfig } from '../models/field-config.interface';
+import { Field } from '../../../models/field.interface';
+import { FieldConfig } from '../../../models/field-config.interface';
 
 const components: {[type: string]: Type<Field>} = {
   button: FormButtonComponent,
@@ -29,7 +30,8 @@ const components: {[type: string]: Type<Field>} = {
   radios: FormRadiosComponent,
   reset: FormResetComponent,
   select: FormSelectComponent,
-  submit: FormSubmitComponent
+  submit: FormSubmitComponent,
+  textarea: FormTextareaComponent
 };
 
 @Directive({

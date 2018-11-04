@@ -1,0 +1,16 @@
+<div class="dynamic-field form-radios"
+     [formGroup]="group"
+     [ngClass]="config.class">
+  <div *ngFor="let option of config.options; index as i" class="form-check">
+    <input class="form-check-input"
+           type="radio"
+           [value]="getValue(option)"
+           [name]="config.name"
+           [id]="config.name + '-' + i"
+           [formControlName]="config.name">
+    <label class="form-check-label"
+           [for]="config.name + '-' + i">
+      {{ getDisplay(option) }}
+    </label>
+  </div>
+</div>
